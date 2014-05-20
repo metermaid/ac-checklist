@@ -4,7 +4,7 @@
 @import "colors";
 
 body {
-	margin: 0;
+	margin: 0 5% 0 5%;
 	background-color: rgb(251, 229, 180);
 	background-image: linear-gradient(90deg, rgba(247, 219, 142, 0.5) 50%, transparent 50%),
 	linear-gradient(rgba(247, 219, 142, 0.5) 50%, transparent 50%);
@@ -14,7 +14,7 @@ body {
 #container {
   @include outer-container;
   background-color: rgb(255, 255, 255);
-  border: 2px solid #FFDC00;
+  border: 2px solid $yellow;
   box-shadow: white 0 0 0 3px,
   				  #FFDC00 0 0 0 7px,
   				  rgba(0,0,0,0.3) 6px 6px 0 6px;
@@ -26,7 +26,36 @@ body {
 }
 
 #main-header {
-	border-bottom: 2px solid #FFDC00;
+	border-bottom: 2px solid $yellow;
+	margin-bottom: 10px;
+}
+
+#task-list {
+	label {
+		display: inline-block;
+	}
+	.done label {
+		color: $silver;
+		text-decoration:line-through;
+	}
+	.trash {
+		color: $gray;
+	}
+	input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+	input[type=checkbox] + label:before {
+	  font-family: FontAwesome;
+	  display: inline-block;
+	}
+
+	input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+	input[type=checkbox] + label:before { letter-spacing: 5px; } /* space between checkbox and label */
+
+	input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
+	input[type=checkbox]:checked + label:before { letter-spacing: 2px; } /* allow space for check mark */
+}
+
+#add-task {
+	float: right;
 }
 
 .f-left {

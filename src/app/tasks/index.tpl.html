@@ -1,0 +1,17 @@
+
+
+<ul id="task-list">
+  <li ng-repeat="task in current_tasks track by $index" ng-class="{done: task.done}">
+      <input id="task-{{$index}}" type="checkbox" ng-model="task.done">
+      <label for="task-{{$index}}">{{task.name}}</label>
+      <button class="unstyled trash" ng-click="removeTask($index)"><i class="fa fa-trash-o"></i></button>
+  </li>
+</ul>
+
+<footer>
+  <button ng-click="unmarkAll()">New Day</button>
+  <button ng-click="markAll()">Check All</button>
+	<form ng-submit="addTask()" id="add-task">
+	  <input id="new-task" placeholder="Add Task" ng-model="newTask">
+	</form>
+</footer>

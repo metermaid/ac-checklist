@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+<html ng-app="checklist" ng-controller="AppCtrl">
   <head>
     <title ng-bind="pageTitle"></title>
 
@@ -12,6 +12,7 @@
 
     <!-- inject:css -->
     <!-- endinject -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- inject:js -->
     <!-- endinject -->
@@ -20,8 +21,7 @@
   <body>
     <div id="container" class="bg-yellow">
       <header id="main-header">
-        <h1>AC Checklist</h1>
-        <h2>Daily tasks in New Leaf</h2>
+        <h1>AC Checklist: Daily tasks in New Leaf</h1>
       </header>
       <section id="main" ui-view="main"></section>
     </div>
